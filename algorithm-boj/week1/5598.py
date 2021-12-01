@@ -1,5 +1,5 @@
-from sys import stdin
-input = stdin.readline
+# from sys import stdin
+# input = stdin.readline
 
 before_transition = input()
 after_transition = ''
