@@ -2,31 +2,39 @@ from sys import stdin
 input = stdin.readline
 
 N = int(input())
-queue = []
+deque = []
 
 for _ in range(N):
     cmd = input().rstrip()
-    if len(cmd) > 5:
-        queue.append(cmd[5:])
-    elif cmd == 'pop':
-        if len(queue) != 0:
-            print(queue.pop(0))
+    if cmd[:6] == 'push_f':
+        deque.insert(0, cmd[11:])
+    elif cmd[:6] == 'push_b':
+        deque.append(cmd[10:])
+    elif cmd == 'pop_front':
+        if len(deque) != 0:
+            print(deque.pop(0))
         else:
             print(-1)
+    elif cmd == 'pop_back':
+        if len(deque) != 0:
+            print(deque.pop())
+        else:
+            print(-1)
+
     elif cmd == 'size':
-        print(len(queue))
+        print(len(deque))
     elif cmd == 'empty':
-        if len(queue) == 0:
+        if len(deque) == 0:
             print(1)
         else:
             print(0)
     elif cmd == 'front':
-        if len(queue) != 0:
-            print(queue[0])
+        if len(deque) != 0:
+            print(deque[0])
         else:
             print(-1)
     else:
-        if len(queue) != 0:
-            print(queue[-1])
+        if len(deque) != 0:
+            print(deque[-1])
         else:
             print(-1)
