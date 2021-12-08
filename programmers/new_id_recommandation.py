@@ -27,11 +27,4 @@ def solution(new_id):
         while len(answer) < 3:
             answer += answer[-1]
 
-    print(answer)
-
-
-solution("...!@BaT#*..y.abcdefghijklm")
-solution("z-+.^."	)
-solution("=.=")
-solution("123_.def")
-solution("abcdefghijklmn.p")
+    return answer
