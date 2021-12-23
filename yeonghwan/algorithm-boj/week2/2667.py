@@ -1,28 +1,39 @@
-from sys import stdin
-from collections import deque
-input = stdin.readline
+# from sys import stdin
+# input = stdin.readline
 
-node_count = int(input())
-edge_count = int(input())
-visited = [False] * (node_count+1)
-graph = [[] for _ in range(node_count+1)]
+N = int(input())
 
-for _ in range(edge_count):
-    a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
-
-for node in range(1, node_count+1):
-    graph[node].sort()
+graph = []
+for _ in range(N):
+    graph.append(list(map(int, input())))
 
 
-def dfs(node):
-    visited[node] = True
-    for i in graph[node]:
-        if not visited[i]:
-            dfs(i)
+def dfs(x, y):
+    if x <= -1 or y <= -1 or x >= N or y >= N:
+        return False
+    if graph[x][y] == 1:
+        global count
+        count += 1
+        graph[x][y] = 0
+        dfs(x-1, y)
+        dfs(x+1, y)
+        dfs(x, y-1)
+        dfs(x, y+1)
+        return True
+    return False
 
 
-dfs(1)
+complex_count = 0
+apartment_count = []
+count = 0
 
-print(visited.count(True)-1)
+for i in range(N):
+    for j in range(N):
+        if dfs(i, j) == True:
+            apartment_count.append(count)
+            complex_count += 1
+            count = 0
+
+print(complex_count)
+apartment_count.sort()
+print(*apartment_count, sep='\n')
