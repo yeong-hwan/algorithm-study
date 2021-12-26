@@ -1,0 +1,18 @@
+﻿  1037.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\algorithm(4353,5): error C2672: '_Sort_unchecked': 일치하는 오버로드된 함수가 없습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\algorithm(4358): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::sort<_RanIt,std::less<void>>(const _RanIt,const _RanIt,_Pr)'에 대한 참조를 확인하세요.
+          with
+          [
+              _RanIt=int,
+              _Pr=std::less<void>
+          ]
+D:\바탕 화면\Coding\BaekJoon\PSStudy\1037\1037\1037.cpp(12): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::sort<int>(const _RanIt,const _RanIt)'에 대한 참조를 확인하세요.
+          with
+          [
+              _RanIt=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\algorithm(4353,1): error C2893: 함수 템플릿 'void std::_Sort_unchecked(_RanIt,_RanIt,iterator_traits<_Iter>::difference_type,_Pr)'을(를) 특수화하지 못했습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\algorithm(4319): message : 'std::_Sort_unchecked' 선언을 참조하십시오.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\algorithm(4353,1): message : 다음 템플릿 인수 사용:
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\algorithm(4353,1): message : '_RanIt=_RanIt'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\algorithm(4353,1): message : '_Pr=_Fn'

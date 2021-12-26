@@ -1,0 +1,4 @@
+﻿  2440.cpp
+D:\바탕 화면\Coding\BaekJoon\PSStudy\2440\2440\2440.cpp(6,12): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+D:\바탕 화면\Coding\BaekJoon\PSStudy\2440\2440\2440.cpp(6,9): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  2440.vcxproj -> D:\바탕 화면\Coding\BaekJoon\PSStudy\2440\Debug\2440.exe
