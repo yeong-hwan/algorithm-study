@@ -1,0 +1,147 @@
+{
+    "configurations": [
+        {
+            "name": "(Windows) 연결",
+            "type": "cppvsdbg",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        },
+        {
+            "name": "(Windows) 시작",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "(gdb) 파이프 연결",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+            "processId": "${command:pickRemoteProcess}",
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "<plink.exe 같은 파이프 프로그램의 전체 경로>",
+                "pipeArgs": [],
+                "pipeCwd": ""
+            },
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb에 자동 서식 지정 사용",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) 파이프 시작",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "<plink.exe 같은 파이프 프로그램의 전체 경로>",
+                "pipeArgs": [],
+                "pipeCwd": ""
+            },
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb에 자동 서식 지정 사용",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) 연결",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+            "processId": "${command:pickProcess}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb에 자동 서식 지정 사용",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) 시작",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb에 자동 서식 지정 사용",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Windows 연결의 Bash",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+            "processId": "${command:pickRemoteProcess}",
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "${env:windir}\\system32\\bash.exe",
+                "pipeArgs": ["-c"],
+                "pipeCwd": ""
+            },
+            "setupCommands": [
+                {
+                    "description": "gdb에 자동 서식 지정 사용",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+    {
+        "name": "(gdb) Windows 시작의 Bash",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": true,
+        "pipeTransport": {
+            "debuggerPath": "d/usr/bin/gdb",
+            "pipeProgram": "${env:windir}\\system32\\bash.exe",
+            "pipeArgs": ["-c"],
+            "pipeCwd": ""
+        },
+        "setupCommands": [
+            {
+                "description": "gdb에 자동 서식 지정 사용",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+    }
+    ]
+}
