@@ -1,0 +1,4 @@
+﻿  1546.cpp
+D:\바탕 화면\Coding\BaekJoon\algorithm-study\minseok\1546\1546\1546.cpp(15,17): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\바탕 화면\Coding\BaekJoon\algorithm-study\minseok\1546\1546\1546.cpp(23,15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  1546.vcxproj -> D:\바탕 화면\Coding\BaekJoon\algorithm-study\minseok\1546\Debug\1546.exe

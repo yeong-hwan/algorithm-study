@@ -1,5 +1,6 @@
 # algorithm-study
 
-branch-list
+User
 yeonghwan
 junha
+minseok
