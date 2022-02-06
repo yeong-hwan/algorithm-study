@@ -1,6 +1,15 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 int main(){
-    "test 2"   
+    int T;
+    vector<vector<int>> House;
+    vector<int> Colored;
+
+    cin >> T;
+    
+
+       
 }
