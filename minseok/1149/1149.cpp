@@ -8,7 +8,7 @@ int main(){
     int House[1001][3] = {0,};
     
     cin >> T;
-    for(int i = 0 ; i < T ; i++){
+    for(int i = 0 ; i <= T ; i++){
         cin >> House[i][0] >> House[i][1] >> House[i][2];
 
         House[i][0] += min(House[i-1][1],House[i-1][2]);
