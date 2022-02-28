@@ -1,34 +1,27 @@
-# 기타의 1~6번줄 각각에 대한 리스트 생성
-strings = [[] for _ in range(7)]
+import sys
+input = sys.stdin.readline
 
-res = 0
+n = 3
 
-# 입력받은 음계(줄, 프렛)
-for l, f in melody:
-    # 해당 줄에 프렛이 하나도 없으면 새로 추가
-    if len(strings[l]) == 0:
-        strings[l].append(f)
-        res += 1
+dp = [[0] * 10 for _ in range(n + 1)]
 
-    # 해당 줄에 프렛이 있는 경우
-    else:
-        # 연주하려는 프렛이 기존의 프렛보다 높은 음이라면, 새로 추가
-        if f > strings[l][-1]:
-            strings[l].append(f)
-            res += 1
-            print(strings[l])
-        # 연주하려는 프렛이 기존의 프렛과 같은 음이라면, 그냥 지나감
-        elif f == strings[l][-1]:
-            print(strings[l])
-            continue
-        # 연주하려는 프렛이 기존의 프렛보다 낮은 음이라면, 연주하려는 프렛보다 높은 음들을 모두 pop
+# 1 자리수는 0을 제외하고(조거 : 0은 앞에 올 수 없음) 1로 초기화
+for i in range(1, 10):
+    dp[1][i] = 1
+
+# dp[N 자리 수][N자리 숫자일 때 해당 Index 앞에 올 수 있는 일의 자리 수]
+# 2 자리수부터 시작
+for i in range(2, n+1):  # n 자리 수
+    for j in range(10):  # Index
+        # 뒷자리가 0일 때는 앞에 1밖에 오지 못함
+        if j == 0:
+            dp[i][j] = dp[i-1][j+1]
+        # 뒷자리가 9일 때는 앞에 8밖에 오지 못함
+        elif j == 9:
+            dp[i][j] = dp[i-1][j-1]
+        # 뒷자리가 2~8일 때는 앞에 숫자가 2개씩 올 수 있음
         else:
-            while strings[l] and f < strings[l][-1]:
-                strings[l].pop()
-                res += 1
-            if strings[l] and f == strings[l][-1]:
-                continue
-            # 그리고 나서 연주하려는 프렛 추가
-            strings[l].append(f)
-            res += 1
-print(res)
+            dp[i][j] = dp[i-1][j-1] + dp[i-1][j+1]
+
+
+print(sum(dp[n]) % 1000000000)

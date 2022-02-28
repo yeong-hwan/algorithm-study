@@ -1,14 +1,16 @@
 N = int(input())
-stair = [int(input()) for _ in range(N)]
-dp = [0] * N
+dp = [[0] * 10 for _ in range(101)]
+dp[1][0] = 0
+for i in range(1, 10):
+    dp[1][i] = 1
 
-if N > 2:
-    dp[0], dp[1] = stair[0], stair[0]+stair[1]
-    dp[2] = max(stair[0] + stair[2], stair[1] + stair[2])
-    for i in range(3, N):
-        dp[i] = max(dp[i-3]+stair[i-1]+stair[i], dp[i-2]+stair[i])
-    print(dp[N-1])
-elif N == 1:
-    print(stair[0])
-elif N == 2:
-    print(stair[0] + stair[1])
+for degree in range(2, N+1):
+    for i in range(10):
+        if i == 0:
+            dp[degree][i] = dp[degree-1][1]
+        elif i == 9:
+            dp[degree][i] = dp[degree-1][8]
+        else:
+            dp[degree][i] = dp[degree-1][i-1] + dp[degree-1][i+1]
+
+print(sum(dp[N]) % 1000000000)
