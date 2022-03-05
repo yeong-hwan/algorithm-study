@@ -1,8 +1,14 @@
 N = int(input())
-dp = [[0] * 10 for _ in range(1001)]
-dp[1] = [1 for _ in range(10)]
-for i in range(2, N+1):
-    for j in range(10):
-        dp[i][j] = sum(dp[i-1][j:])
+price = [0]
+m_l = list(map(int, input().split()))
+for i in m_l:
+    price.append(i)
 
-print(sum(dp[N]) % 10007)
+dp = [0] * 1001
+dp[1] = price[1]
+
+for i in range(2, N+1):
+    for j in range(1, i+1):
+        dp[i] = max(dp[i], dp[i-j] + price[j])
+
+print(dp[N])
