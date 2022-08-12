@@ -1,6 +1,5 @@
-from sys import stdin, setrecursionlimit
+from sys import setrecursionlimit
 setrecursionlimit(10 ** 6)
-input = stdin.readline
 
 T = int(input())
 

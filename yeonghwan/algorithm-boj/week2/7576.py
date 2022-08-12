@@ -1,6 +1,4 @@
-from sys import stdin
 from collections import deque
-input = stdin.readline
 
 M, N = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]

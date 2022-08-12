@@ -1,6 +1,4 @@
-from sys import stdin
 from collections import deque
-input = stdin.readline
 
 N, M, V = map(int, input().split())
 visited = [False] * (N+1)
