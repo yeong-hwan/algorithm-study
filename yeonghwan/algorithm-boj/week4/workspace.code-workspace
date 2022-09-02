@@ -1,0 +1,18 @@
+{
+  "folders": [
+	{
+		"name": "web-study",
+		"path": "../../../../web-study"
+	},
+	{
+		"name": "algorithm-study",
+		"path": "../../.."
+	},
+	{
+		"path": "../../../../js-clonecoding"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "web-study"
+  }
+}
