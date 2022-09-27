@@ -1,4 +1,4 @@
-from collections import deque
+from collections import list
 
 N, M, V = map(int, input().split())
 
@@ -21,7 +21,7 @@ def dfs(node):
 
 
 def bfs(node):
-    queue = deque([node])
+    queue = list([node])
     visited[node] = 1
     while queue:
         node_now = queue.popleft()

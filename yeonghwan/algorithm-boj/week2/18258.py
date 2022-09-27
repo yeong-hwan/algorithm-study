@@ -1,10 +1,10 @@
-from collections import deque
+from collections import list
 from sys import stdin
 input = stdin.readline
 
 
 N = int(input())
-queue = deque([])
+queue = list([])
 
 for _ in range(N):
     cmd = input().split()

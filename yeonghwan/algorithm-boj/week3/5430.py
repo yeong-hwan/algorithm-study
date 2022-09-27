@@ -1,4 +1,4 @@
-from collections import deque
+from collections import list
 
 T = int(input())
 
@@ -8,7 +8,7 @@ for _ in range(T):
     arr = input()
     break_point = 0
     pop_bin = 0
-    array = deque(arr[i] for i in range(len(arr)) if i % 2 == 1)
+    array = list(arr[i] for i in range(len(arr)) if i % 2 == 1)
 
     for letter in array:
         if letter.isdigit() == False:

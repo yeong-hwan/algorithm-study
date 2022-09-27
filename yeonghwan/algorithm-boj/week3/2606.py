@@ -1,4 +1,4 @@
-from collections import deque
+from collections import list
 N = int(input())
 graph = [[] for _ in range(N+1)]
 M = int(input())
@@ -14,7 +14,7 @@ visited = [0] * (N+1)
 
 
 def bfs(node):
-    queue = deque([node])
+    queue = list([node])
     visited[node] = 1
     while queue:
         node_now = queue.popleft()

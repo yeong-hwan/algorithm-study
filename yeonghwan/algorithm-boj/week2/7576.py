@@ -1,8 +1,8 @@
-from collections import deque
+from collections import list
 
 M, N = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]
-queue = deque()
+queue = list()
 dx, dy = [-1, 1, 0, 0], [0, 0, 1, -1]
 start_list = []
 

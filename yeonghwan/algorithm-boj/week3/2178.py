@@ -1,11 +1,11 @@
-from collections import deque
+from collections import list
 N, M = map(int, input().split())
 
 graph = []
 for i in range(N):
     graph.append(list(map(int, input())))
 
-queue = deque()
+queue = list()
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
 

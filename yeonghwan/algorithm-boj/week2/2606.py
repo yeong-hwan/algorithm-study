@@ -1,5 +1,5 @@
 from sys import stdin
-from collections import deque
+from collections import list
 input = stdin.readline
 
 node_count = int(input())

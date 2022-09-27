@@ -1,4 +1,4 @@
-from collections import deque
+from collections import list
 N = int(input())
 graph = []
 for i in range(N):

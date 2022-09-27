@@ -1,6 +1,6 @@
-from collections import deque
+from collections import list
 
-queue = deque()
+queue = list()
 N = int(input())
 
 for i in range(N):
