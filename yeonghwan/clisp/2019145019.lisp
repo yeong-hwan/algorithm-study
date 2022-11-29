@@ -1,15 +1,33 @@
+; ; 1. printBoard
+; (defun printBoard (board)
+;     (dotimes (row 9)
+;     (if (zerop (mod row 3))
+;         (format t "~%+---+---+---+---+---+---+~%|")
+;         (format t "~%|"))
+;       (dotimes (col 9)
+;         (if (= 2 (mod col 3))
+;             (format t " ~a |" (aref board row col))
+;           (format t " ~a" (aref board row col)))))
+;   (format t "~%+---+---+---+---+---+---+~%~%")
+; )
+
 ; 1. printBoard
 (defun printBoard (board)
-  (dotimes (row 9)
+    (let ((result ""))
+    (dotimes (row 9)
     (if (zerop (mod row 3))
-          (format t "~%+---+---+---+---+---+---+~%|") 
-        (format t "~%|"))
-      (dotimes (col 9)
-        (if (= 2 (mod col 3))
-            (format t " ~a |" (aref board row col))
-          (format t " ~a" (aref board row col)))))
-  (format t "~%+---+---+---+---+---+---+~%~%")
+        (setf result (concatenate 'string result (format nil "~%+---+---+---+---+---+---+~%|")))
+        (setf result (concatenate 'string result (format nil "~%|"))))
+        (dotimes (col 9)
+            (if (= 2 (mod col 3))
+                (setf result (concatenate 'string result (format nil " ~a |" (aref board row col))))
+                (setf result (concatenate 'string result (format nil " ~a" (aref board row col)))))))
+    (setf result (concatenate 'string result (format nil "~%+---+---+---+---+---+---+~%~%")))
+  (format nil "~a" result)
+    ; result
+  )
 )
+
 
 (printBoard #2a((0 0 0 0 0 0 0 0 0) (0 0 0 0 0 0 0 0 0) (0 0 0 0 0 0 0 0 0)
 (0 0 0 0 0 0 0 0 0) (0 0 0 0 0 0 0 0 0) (0 0 0 0 0 0 0 0 0) (0 0 0 0 0 0 0
@@ -65,12 +83,12 @@
         (when (= (aref board i j) 0)
           (setf filled nil x i y j))))
     (if filled
-        (printBoard board)
+        (format t "~a" (printBoard board))
         (dotimes (k 9)
           (setf (aref board x y) (1+ k))
           (when (checkBoard board x y)
             (solveBoard board))
-          ; (setf (aref board x y) 0)))))
+          (setf (aref board x y) 0)))))
 
 
 (solveBoard #2a((0 3 5 4 6 9 2 7 8) (7 8 2 1 0 5 6 0 9) (0 6 0 2 7 8 1 3 5)
