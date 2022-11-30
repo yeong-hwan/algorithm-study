@@ -27,3 +27,5 @@ blocks([], [], []).
 blocks([A,B,C|Bs1], [D,E,F|Bs2], [G,H,I|Bs3]) :-        %7
     all_distinct([A,B,C,D,E,F,G,H,I]),
     blocks(Bs1, Bs2, Bs3).
+
+checkLine(L) :- all_distinct(L).
